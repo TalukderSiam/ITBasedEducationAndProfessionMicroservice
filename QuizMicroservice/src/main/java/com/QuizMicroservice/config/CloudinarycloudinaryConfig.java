@@ -1,4 +1,4 @@
-package com.edupro.EducationWeb.config;
+package com.QuizMicroservice.config;
 
 import java.util.HashMap;
 import java.util.Map;

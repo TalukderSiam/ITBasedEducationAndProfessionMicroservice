@@ -1,10 +1,10 @@
-package com.Quiz.Quiz.Microservice.utils;
+package com.QuizMicroservice.utils;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-import com.Quiz.Quiz.Microservice.dto.response.RootResponseModel;
+import com.QuizMicroservice.dto.response.RootResponseModel;
 
 
 

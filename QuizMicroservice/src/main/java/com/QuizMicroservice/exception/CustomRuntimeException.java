@@ -1,4 +1,4 @@
-package com.edupro.EducationWeb.exception;
+package com.QuizMicroservice.exception;
 
 
 

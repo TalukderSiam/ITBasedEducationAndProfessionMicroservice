@@ -1,4 +1,4 @@
-package com.Quiz.Quiz.Microservice.entity;
+package com.QuizMicroservice.entity;
 
 import java.time.LocalDateTime;
 import java.util.List;

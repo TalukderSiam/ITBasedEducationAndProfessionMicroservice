@@ -1,4 +1,4 @@
-package com.edupro.EducationWeb.dto.response;
+package com.QuizMicroservice.dto.response;
 
 import java.util.List;
 
