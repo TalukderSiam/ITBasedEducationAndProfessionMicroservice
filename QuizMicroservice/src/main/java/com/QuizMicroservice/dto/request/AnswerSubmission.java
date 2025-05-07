@@ -20,7 +20,7 @@ import lombok.NoArgsConstructor;
 
 public class AnswerSubmission  {
    
-    private String questionId;
+    private int questionId;
     private String question;
     private String selectedOption;
     private String remarks;
