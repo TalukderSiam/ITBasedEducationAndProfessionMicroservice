@@ -16,5 +16,7 @@ public interface ChatRepository extends JpaRepository<Message, Integer> {
 
     List<Message> findBySenderId(String senderId);
 
+    List<Message> findBySenderIdOrderByCreationDate(String senderId);
+
     
 }

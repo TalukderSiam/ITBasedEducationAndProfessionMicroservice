@@ -3,6 +3,8 @@ package com.ChatMicroservice.service.ServiceImplemantation;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional; 
+import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
+import org.springframework.ai.chat.memory.InMemoryChatMemory;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +26,8 @@ public class ChatServiceImplementation implements ChatService {
 
     public ChatServiceImplementation( ChatClient.Builder builder) {
        
-        this.chatClient = builder.build();
+       chatClient = builder.defaultAdvisors(new MessageChatMemoryAdvisor(new InMemoryChatMemory())).build();
+                            
     }
 
     @Override
@@ -46,7 +49,7 @@ public class ChatServiceImplementation implements ChatService {
     @Override
     public List<Message> getbySenderId(String senderId) {
         try {
-           return ChatRepository.findBySenderId(senderId);
+           return ChatRepository.findBySenderIdOrderByCreationDate(senderId);
         } catch (Exception e) {
             throw new CustomRuntimeException(false, e.getMessage(), "Message_Get",
                                 "MessageList", List.of());
