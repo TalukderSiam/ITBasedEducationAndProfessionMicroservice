@@ -22,10 +22,14 @@ public class JobPostServiceImplementation implements JobPostService{
     public List<JobSiteResponse> getAllJobPosts() {
         List<JobSiteResponse> allSources = new ArrayList<>();
 
+        System.out.println();
+        System.out.println("i got call ");
+        System.out.println();
+
         allSources.add(new JobSiteResponse("CareerJet", scrapeCareerJet()));
         allSources.add(new JobSiteResponse("BdJobs", scrapeBdJobs()));
         allSources.add(new JobSiteResponse("AnotherSite", scrapeAnotherSite()));
-
+        
         return allSources;
     }
 
