@@ -46,10 +46,12 @@ public class Contest {
     private String contestName;
     private String platform;
 
-    @ManyToOne
-    @JoinColumn(name = "topic_id")
-    @JsonIgnore
-    private Topic topic;
+    // When need bidirection
+
+    // @ManyToOne
+    // @JoinColumn(name = "topic_id")
+    // @JsonIgnore
+    // private Topic topic;
 
 
     

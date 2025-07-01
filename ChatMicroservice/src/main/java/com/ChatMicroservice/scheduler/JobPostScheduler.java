@@ -21,7 +21,7 @@ public class JobPostScheduler {
     }
 
     //@Scheduled(cron = "0 0 * * * ?") // every hour
-    // @Scheduled(cron = "*/2 * * * * *") // every 2 seconds
+     //@Scheduled(cron = "*/5 * * * * *") // every 2 seconds
     @Scheduled(cron = "0 0 8 * * *")
     public void fetchJobsRegularly() {
         List<JobSiteResponse> jobs = jobScraperService.getAllJobPosts();

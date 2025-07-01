@@ -8,6 +8,7 @@ import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -34,16 +35,27 @@ public class Topic {
     private String remarks;
     private String status;
     private String userId;
-
     private String topicName;
     private String topicDescribtion;
+    private String featureName;
+    private String semester;
 
-    @OneToMany(mappedBy = "topic", cascade = CascadeType.ALL)
+    // When need bidirection
+
+    // @OneToMany(mappedBy = "topic", cascade = CascadeType.ALL)
+    //
+    // private List<Problem> problems = new ArrayList<>();
+
+    // @OneToMany(mappedBy = "topic", cascade = CascadeType.ALL)
+    //
+    // private List<Contest> contests = new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @JoinColumn(name = "topic_id")
     private List<Problem> problems = new ArrayList<>();
 
-    @OneToMany(mappedBy = "topic", cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @JoinColumn(name = "topic_id")
     private List<Contest> contests = new ArrayList<>();
-
-   
 
 }

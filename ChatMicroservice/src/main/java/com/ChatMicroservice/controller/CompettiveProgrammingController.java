@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ChatMicroservice.dto.response.RootResponseModel;
-
+import com.ChatMicroservice.dto.response.TopicResponse;
 import com.ChatMicroservice.service.ChatService;
 
 import com.ChatMicroservice.service.TopicService;
@@ -105,12 +105,14 @@ public class CompettiveProgrammingController {
     }
 
      @GetMapping("/getalltopic")
-    public ResponseEntity<RootResponseModel<?>> getAllTopic() {
+    public ResponseEntity<RootResponseModel<?>> getAllTopic(@RequestParam String FeatureName, @RequestParam(defaultValue = "NULL") String Semester ) {
         // System.out.println();
         // System.out.println(TopicId);
         // System.out.println();
 
-        List<Topic> savedTopicList = topicService.getAllTopic();
+        
+
+        List<TopicResponse> savedTopicList = topicService.getAllTopic(FeatureName,Semester);
 
         RootResponseModel<?> response = ResponseOfApi.makeRootResponseModelFormate(
                 true,

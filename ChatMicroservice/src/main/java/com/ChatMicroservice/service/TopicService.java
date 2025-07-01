@@ -2,6 +2,7 @@ package com.ChatMicroservice.service;
 
 import java.util.List;
 
+import com.ChatMicroservice.dto.response.TopicResponse;
 import com.ChatMicroservice.entity.CompettiveProgramming.Contest;
 import com.ChatMicroservice.entity.CompettiveProgramming.Problem;
 import com.ChatMicroservice.entity.CompettiveProgramming.Topic;
@@ -16,6 +17,6 @@ public interface TopicService {
 
     Topic getTopicById(int topicId);
 
-    List<Topic> getAllTopic();
+    List<TopicResponse> getAllTopic(String featureName, String semester);
     
 }
